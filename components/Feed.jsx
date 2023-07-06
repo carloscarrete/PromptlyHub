@@ -21,6 +21,9 @@ const Feed = () => {
       regex.test(item.pro)
     );
   }
+
+  
+
   const handleSearchText = (e) => {
     clearTimeout(searchTimeout);
     setSearchText(e.target.value);
@@ -52,6 +55,14 @@ const Feed = () => {
     );
   };
 
+  const handleTagClick = (tagName) => {
+    setSearchText(tagName);
+
+    const searchResult = filteredPrompts(tagName);
+    setSearchedResults(searchResult);
+  };
+
+
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await fetch('/api/prompt');
@@ -73,10 +84,15 @@ const Feed = () => {
         />
       </form>
 
-      <PromptListCard
-        data={searchedResults}
-        handleTagClick={() => { }}
-      />
+        {/* All Prompts */}
+        {searchText ? (
+        <PromptListCard
+          data={searchedResults}
+          handleTagClick={handleTagClick}
+        />
+      ) : (
+        <PromptListCard data={posts} handleTagClick={handleTagClick} />
+      )}
     </section>
   )
 }
