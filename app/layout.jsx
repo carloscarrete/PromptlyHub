@@ -6,7 +6,10 @@ import '@styles/globals.css';
 
 export const metadata = {
     title: 'PromptlyHub',
-    description: 'Expand your creative horizons with our selection of artificial intelligence prompts on PromptlyHub.'
+    description: 'Expand your creative horizons with our selection of artificial intelligence prompts on PromptlyHub.',
+    icons: {
+        icon: '/assets/images/lightbulb.png',
+    }
 }
 
 const RootLayout = ({ children }) => {
