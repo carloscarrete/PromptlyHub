@@ -5,8 +5,8 @@ import '@styles/globals.css';
 
 
 export const metadata = {
-    title: 'promthunks',
-    description: 'AI prompts'
+    title: 'PromptlyHub',
+    description: 'Expand your creative horizons with our selection of artificial intelligence prompts on PromptlyHub.'
 }
 
 const RootLayout = ({ children }) => {
